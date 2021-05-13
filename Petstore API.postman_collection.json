@@ -1,0 +1,660 @@
+{
+	"info": {
+		"_postman_id": "e5bc5697-db30-41ac-8e18-c75dc8a16a0b",
+		"name": "Petstore API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add New User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"moulee\",\"firstname\": \"Mouleeswaran\",\"lastname\": \"Ganapathi\",\"email\": \"moulee@outlook.com\",\"password\": \"moulee\",\r\n\"phone\": \"+33-753077895\",\"userstatus\":0}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "rob",
+							"disabled": true
+						},
+						{
+							"key": "firstname",
+							"value": "Rob",
+							"disabled": true
+						},
+						{
+							"key": "lastname",
+							"value": "Green",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "rgreen@outlook.com",
+							"disabled": true
+						},
+						{
+							"key": "phone",
+							"value": "+33-756483280",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "abcde",
+							"disabled": true
+						},
+						{
+							"key": "id",
+							"value": "2",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Required parameters : username, firstname, lastname, email, password, phone"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Multiple Users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\"username\":\"mouleegkss\",\"firstname\":\"moulee\",\"lastname\":\"moulee\",\"email\":\"mouleegkss@gmail.com\",\"password\":\"moulee\",\"phone\":\"+33-753077895\",\"userstatus\":0},{\"username\":\"mouleegkkss\",\"firstname\":\"moulee\",\"lastname\":\"moulee\",\"email\":\"mouleegkkss@gmail.com\",\"password\":\"moulee\",\"phone\":\"+33-753077895\",\"userstatus\":0}]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/createWithArray",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"createWithArray"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"data\": \"Hello World\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/login?username=mouleesss&password=moulee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"login"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "mouleesss"
+						},
+						{
+							"key": "password",
+							"value": "moulee"
+						},
+						{
+							"key": "id",
+							"value": "2",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/user/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"logout"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				},
+				"description": "REquired parameters  : apikey"
+			},
+			"response": []
+		},
+		{
+			"name": "Get User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/user?username=mouleess",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "mouleess"
+						}
+					]
+				},
+				"description": "Parameter required : username"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOWE0MGUxYjBhZmMyNGNhNGIyMTBmMyIsImlhdCI6MTYyMDg4NDIxMSwiZXhwIjoxNjIwOTcwNjExfQ.JIVfQLvH6xwFpD3wVKtvx_HZrKWaBSgyAGqwrhh74fs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "x-access-token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOWEzNjRjODY5MzNjMmNlMGQwMjAyOCIsImlhdCI6MTYyMDcyMDAzMiwiZXhwIjoxNjIwODA2NDMyfQ.SpBDFTE3Xb2cRhiPy3VqFlmVrCfeTR06HeSZ3tMWc70",
+							"type": "text",
+							"disabled": true
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user?username=mouleegkkss",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "mouleegkkss"
+						}
+					]
+				},
+				"description": "required parameter : id"
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOWE0MjczNDdkOTVkOGI1ODc4OGQxOCIsImlhdCI6MTYyMDcyMzM0OCwiZXhwIjoxNjIwODA5NzQ4fQ.iq5qxxbuzda2QITtg3QJBy_oQgBUr_LFjM4j3k2ob1M",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"password\" : \"334455\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user?username=mouleess",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "12345",
+							"disabled": true
+						},
+						{
+							"key": "username",
+							"value": "mouleess"
+						},
+						{
+							"key": "firstname",
+							"value": "Mouleeswaran",
+							"disabled": true
+						},
+						{
+							"key": "lastname",
+							"value": "Ganapathi",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "moulee@outlook.comsss",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "moulee8582",
+							"disabled": true
+						},
+						{
+							"key": "phone",
+							"value": "+33-75307",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create new pet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"scooby\", \"photourl\":\"www.google.com\", \"category\":\"dog\", \"tags\":\"puppy\", \"status\": \"sold\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/pet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GEt pet by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/pet?id=12345",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pet"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "12345"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pet find by status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/pet/findByStatus?status=available",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pet",
+						"findByStatus"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "available"
+						},
+						{
+							"key": "status",
+							"value": "sold",
+							"disabled": true
+						},
+						{
+							"key": "status",
+							"value": "pending",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update pet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "scooobydooss",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "pending",
+							"type": "text",
+							"disabled": true
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/pet/update?id=609a68b5c2110f6bccd379dc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pet",
+						"update"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "609a68b5c2110f6bccd379dc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update pet",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"status\":\"pending\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/pet?id=609a652bcd78b849d8c332f8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pet"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "609a652bcd78b849d8c332f8"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete pet",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOWE0MjczNDdkOTVkOGI1ODc4OGQxOCIsImlhdCI6MTYyMDgzMDIwOCwiZXhwIjoxNjIwOTE2NjA4fQ.XQ5PHrnjkyqjXA3mkYQuKyM7U_2-rMOonrCjCQnbZAQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/pet?id=123456789123456789123456",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pet"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "123456789123456789123456"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create order",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var current_timestamp = new Date();\r",
+							"postman.setEnvironmentVariable(\"current_timestamp\", current_timestamp.toISOString());"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"petId\":\"609cb7fd4ec52b56a91683fa\",\"quantity\":\"1\",\"shipDate\":\"{{current_timestamp}}\",\"status\":\"delivered\",\"complete\":true}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/store/order",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"store",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/store/order?id=609bffd00e1f202f0452cbc2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"store",
+						"order"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "609bffd00e1f202f0452cbc2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Inventory",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/store/inventory",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"store",
+						"inventory"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "609a858eaad96087145ca32e",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Order",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOWE0MGUxYjBhZmMyNGNhNGIyMTBmMyIsImlhdCI6MTYyMDg4NDIxMSwiZXhwIjoxNjIwOTcwNjExfQ.JIVfQLvH6xwFpD3wVKtvx_HZrKWaBSgyAGqwrhh74fs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/store/order?id=609bffd00e1f202f0452cbc2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"store",
+						"order"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "609bffd00e1f202f0452cbc2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
